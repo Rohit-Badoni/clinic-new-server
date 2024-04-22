@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import './assets/lib/animate/animate.min.css';
+import './assets/lib/owlcarousel/assets/owl.carousel.min.css';
+import './assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css';
+import './assets/css/Bootstrap.min.css';
+import './assets/css/Style.css';
+
+
+import Home from "./pages/Home.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+       <Route path="/" element={<Home />}>
+       </Route>
+     </Routes>
+</BrowserRouter>
   );
 }
 
