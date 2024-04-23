@@ -301,6 +301,13 @@
     width: 65px; 
     height: 65px;
 }
+.contact-us-icon-with-text{
+    width: 55px; 
+    height: 55px;
+}
+.iframe-map{
+    min-height: 400px; 
+}
 /*** Feature ***/
 @media (min-width: 992px) {
     .container.feature {
@@ -482,6 +489,7 @@
     color: var(--primary);
     font-size: 45px;
     transition: .5s;
+    border: none !important;
 }
 
 .testimonial-carousel .owl-nav .owl-prev:hover,

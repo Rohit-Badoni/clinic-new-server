@@ -1,5 +1,8 @@
 import React from "react";
+import OwlCarousel from 'react-owl-carousel';
+
 import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 
 import  carousel_1  from "../assets/img/carousel-1.jpg";
 import  carousel_2  from "../assets/img/carousel-2.jpg";
@@ -49,8 +52,20 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <div className="owl-carousel header-carousel">
-                        <div className="owl-carousel-item position-relative">
+                <OwlCarousel
+                className="owl-carousel header-carousel"
+                    autoplay={false}
+                    animateOut="fadeOutLeft"
+                    items={1}
+                    dots
+                    loop
+                    nav
+                    navText={[
+                    '<i class="bi bi-chevron-left"></i>',
+                    '<i class="bi bi-chevron-right"></i>'
+                    ]}
+            >
+               <div className="owl-carousel-item position-relative">
                             <img className="img-fluid" src={carousel_1} alt="" />
                             <div className="owl-carousel-text">
                                 <h1 className="display-1 text-white mb-0">Cardiology</h1>
@@ -68,7 +83,7 @@ const Home = () => {
                                 <h1 className="display-1 text-white mb-0">Pulmonary</h1>
                             </div>
                         </div>
-                    </div>
+            </OwlCarousel>
                 </div>
             </div>
         </div>
@@ -394,91 +409,57 @@ const Home = () => {
             <p className="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
             <h1>What Say Our Patients!</h1>
         </div>
-        <div className="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+
+         <OwlCarousel
+            className="owl-carousel testimonial-carousel wow fadeInUp"
+            autoplay={false}
+            smartSpeed={1000}
+            center
+            dots={false}
+            loop
+            nav
+            navText={[
+                '<i class="bi bi-arrow-left"></i>',
+                '<i class="bi bi-arrow-right"></i>'
+            ]}
+            responsive={{
+                0: {
+                items: 1
+                },
+                768: {
+                items: 2
+                }
+            }}
+            >
             <div className="testimonial-item text-center">
-                <img className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4 testimonial-image" src={testimonial_1} alt=""/>
-                <div className="testimonial-text rounded text-center p-4">
-                    <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h5 className="mb-1">Patient Name</h5>
-                    <span className="fst-italic">Profession</span>
-                </div>
-            </div>
-            <div className="testimonial-item text-center">
-                <img className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4 testimonial-image" src={testimonial_2} alt=""/>
-                <div className="testimonial-text rounded text-center p-4">
-                    <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h5 className="mb-1">Patient Name</h5>
-                    <span className="fst-italic">Profession</span>
-                </div>
-            </div>
-            <div className="testimonial-item text-center">
-                <img className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4 testimonial-image" src={testimonial_3} alt=""/>
-                <div className="testimonial-text rounded text-center p-4">
-                    <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h5 className="mb-1">Patient Name</h5>
-                    <span className="fst-italic">Profession</span>
-                </div>
-            </div>
-        </div>
+                        <img className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4 testimonial-image" src={testimonial_1} alt=""/>
+                        <div className="testimonial-text rounded text-center p-4">
+                            <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+                            <h5 className="mb-1">Patient Name</h5>
+                            <span className="fst-italic">Profession</span>
+                        </div>
+                    </div>
+                    <div className="testimonial-item text-center">
+                        <img className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4 testimonial-image" src={testimonial_2} alt=""/>
+                        <div className="testimonial-text rounded text-center p-4">
+                            <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+                            <h5 className="mb-1">Patient Name</h5>
+                            <span className="fst-italic">Profession</span>
+                        </div>
+                    </div>
+                    <div className="testimonial-item text-center">
+                        <img className="img-fluid bg-light rounded-circle p-2 mx-auto mb-4 testimonial-image" src={testimonial_3} alt=""/>
+                        <div className="testimonial-text rounded text-center p-4">
+                            <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
+                            <h5 className="mb-1">Patient Name</h5>
+                            <span className="fst-italic">Profession</span>
+                        </div>
+                    </div>
+            </OwlCarousel>
+
     </div>
-</div>
-
-
-<div className="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div className="container py-5">
-            <div className="row g-5">
-                <div className="col-lg-3 col-md-6">
-                    <h5 className="text-light mb-4">Address</h5>
-                    <p className="mb-2"><i className="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p className="mb-2"><i className="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p className="mb-2"><i className="fa fa-envelope me-3"></i>info@example.com</p>
-                    <div className="d-flex pt-2">
-                        <a className="btn btn-outline-light btn-social rounded-circle" href="/"><i className="fab fa-twitter"></i></a>
-                        <a className="btn btn-outline-light btn-social rounded-circle" href="/"><i className="fab fa-facebook-f"></i></a>
-                        <a className="btn btn-outline-light btn-social rounded-circle" href="/"><i className="fab fa-youtube"></i></a>
-                        <a className="btn btn-outline-light btn-social rounded-circle" href="/"><i className="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div className="col-lg-3 col-md-6">
-                    <h5 className="text-light mb-4">Services</h5>
-                    <a className="btn btn-link" href="/">Cardiology</a>
-                    <a className="btn btn-link" href="/">Pulmonary</a>
-                    <a className="btn btn-link" href="/">Neurology</a>
-                    <a className="btn btn-link" href="/">Orthopedics</a>
-                    <a className="btn btn-link" href="/">Laboratory</a>
-                </div>
-                <div className="col-lg-3 col-md-6">
-                    <h5 className="text-light mb-4">Quick Links</h5>
-                    <a className="btn btn-link" href="/">About Us</a>
-                    <a className="btn btn-link" href="/">Contact Us</a>
-                    <a className="btn btn-link" href="/">Our Services</a>
-                    <a className="btn btn-link" href="/">Terms & Condition</a>
-                    <a className="btn btn-link" href="/">Support</a>
-                </div>
-                <div className="col-lg-3 col-md-6">
-                    <h5 className="text-light mb-4">Newsletter</h5>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div className="position-relative mx-auto footer-newsletter-height">
-                        <input className="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
-                        <button type="button" className="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="container">
-            <div className="copyright">
-                <div className="row">
-                    <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a className="border-bottom" href="/">Your Site Name</a>, All Right Reserved.
-                    </div>
-                    <div className="col-md-6 text-center text-md-end">
-                        Designed By <a className="border-bottom" href="/">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+  </div>
+  <Footer/>
       </div>        
     )
 }

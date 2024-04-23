@@ -8,12 +8,21 @@ import './assets/css/Style.css';
 
 
 import Home from "./pages/Home.js";
+import About from "./pages/About.js";
+import Service from "./pages/Service.js";
+import Contact from "./pages/Contact.js";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/clinic-react-app'>
     <Routes>
        <Route path="/" element={<Home />}>
+       </Route>
+       <Route path="/about-us" element={<About />}>
+       </Route>
+       <Route path="/service" element={<Service />}>
+       </Route>
+       <Route path="/contact" element={<Contact />}>
        </Route>
      </Routes>
 </BrowserRouter>
